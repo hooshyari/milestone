@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mehrdad Project -- {% block title %}My shop{% endblock %}</title>
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "js/main.js" %}" type="text/javascript">
+</head>
+<body>
+  <div id="header">
+	<div class="container">
+	   <div class="row">
+		<div class="col-md-4 clearfix">
+             		<a href="/" class="logo">My shop</a>
+		</div>
+	   </div>
+	</div>
+  </div>
+  <div id="subheader">
+     <div class="container">
+	<div class="row">
+		<div class="col-md-4 clearfix">
+    	   	    <div class="btn btn-default">
+  			{% with total_items=cart|length %}
+    			{% if cart|length > 0 %}
+      	   		Your cart: 
+      	   		<a href="{% url "cart:cart_detail" %}">
+        			{{ total_items }} item{{ total_items|pluralize }},
+        			${{ cart.get_total_price }}
+      	   		</a>
+    			{% else %}
+      				Your cart is empty.
+    			{% endif %}
+  			{% endwith %}
+		    </div>
+	        </div>
+	  </div>
+     </div>
+  </div>
+  <div id="content">
+     <div class="container">
+		<div class="row">
+	    <div class="col-md-12" >
+    		{% block content %}
+    		{% endblock %}
+	    </div>
+		</div>
+     </div>
+  </div>
+</body>
+</html>
