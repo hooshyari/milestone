@@ -1,7 +1,5 @@
-My Portfolio:
-this is one page sample of html5, Css3 and javascript to show my proffision.
-
-Essentially, this part is your sales pitch.
+My online shop:
+this is one website sample of html5, Css3, javascript, python and Django to show my proffision.
 
 UX
 This will be link to my resume and all employer can see my portfolio easily.
